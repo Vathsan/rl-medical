@@ -243,8 +243,7 @@ class filesListFetalUSLandmark(object):
                 sitk_image, image = NiftiImage().decode(self.image_files[idx])
                 if self.returnLandmarks:
                     landmark_file = self.landmark_files[idx]
-                    all_landmarks = getLandmarksFromTXTFile(
-                        landmark_file, split=' ')
+                    all_landmarks = getLandmarksFromTXTFile(landmark_file)
                     # landmark point 12 csp
                     # 11 leftCerebellar
                     # 10 rightCerebellar
