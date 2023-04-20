@@ -319,7 +319,7 @@ class NiftiImage(object):
 
         # Convert from [depth, width, height] to [width, height, depth]
         image.data = sitk.GetArrayFromImage(
-            sitk_image).transpose(2, 1, 0)  # .astype('uint8')
+            sitk_image).transpose(0, 1, 2)  # .astype('uint8')
         image.dims = np.shape(image.data)
 
         return sitk_image, image
