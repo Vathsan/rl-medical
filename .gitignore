@@ -13,6 +13,8 @@ __pycache__/
 
 # Distribution / packaging
 .Python
+src/data/echoFusion/images
+src/data/echoFusion/landmarks
 env/
 build/
 develop-eggs/
