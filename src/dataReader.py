@@ -318,8 +318,11 @@ class NiftiImage(object):
                                                outputMaximum=255)
 
         # Convert from [depth, width, height] to [width, height, depth]
+        # 2,1,0 for width, height, depth
+        # 0,1,2 for apical
+        # 0,2,1 for parasternal
         image.data = sitk.GetArrayFromImage(
-            sitk_image).transpose(0, 1, 2)  # .astype('uint8')
+            sitk_image).transpose(0, 2, 1)  # .astype('uint8')
         image.dims = np.shape(image.data)
 
         return sitk_image, image
